@@ -4,7 +4,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <header>
+      <header className="o-header">
         <div className="t-container">
           Head
         </div>
