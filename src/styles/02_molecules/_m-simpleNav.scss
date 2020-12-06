@@ -1,0 +1,26 @@
+.m-simpleNav {
+    justify-content: flex-end;
+    font-weight: 300;
+    color: $grey-light;
+    
+    &__item {
+        transition: color 0.3s;
+        position: relative;
+        padding: 0 1rem;
+
+        &::after {
+            content: '';
+            background-color: $grey-dark;
+            display: block;
+            height: 10px;
+            width: 1px;
+            position: absolute;
+            top: 0.4rem;
+            right: 0;
+        }
+
+        &:hover {
+            color: $white;
+        }
+    }
+}

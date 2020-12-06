@@ -1,8 +1,15 @@
+@import "00_base/variables";
 @import '00_base/breakpoints';
 @import '00_base/base';
 
 @import '01_atoms/a-mapPart';
+@import '01_atoms/a-link';
+
+@import '02_molecules/m-horizontalNav';
+@import '02_molecules/m-simpleNav';
 
 @import '03_organisms/o-header';
+@import '03_organisms/o-footer';
 
 @import '04_template/t-container';
+@import '04_template/t-col';

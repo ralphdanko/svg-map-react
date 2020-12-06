@@ -1,12 +1,3 @@
-$screen-sm: 377px;
-$screen-sm-large: 525px;
-
-$screen-md-small: 767px;
-$screen-md-large: 1024px;
-
-$screen-lg-medium: 1280px;
-$screen-lg-large: 1440px;
-
 @mixin phones {
     @media screen and (min-width: $screen-sm) {
         @content;
