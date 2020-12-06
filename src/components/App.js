@@ -7,6 +7,24 @@ import "../styles/06_utilities/normalize.css";
 import "../styles/index.scss";
 
 class App extends React.Component {
+  constructor(props) {
+		super(props);
+
+		this.state = {
+			selectedLocation: null
+		};
+
+		this.handleOnChange = this.handleOnChange.bind(this);
+  }
+  
+  handleOnChange(selectedNode) {
+		this.setState(prevState => {
+			return {
+				...prevState,
+        selectedLocation: selectedNode.attributes.id.value
+			};
+    });
+	}
 
   render() {
     return (
@@ -15,7 +33,9 @@ class App extends React.Component {
         <div className="t-container">
         <RadioSVGMap 
           map={Poland}
+          onChange={this.handleOnChange}
         />
+        Selected location ID: {this.state.selectedLocation}
         </div>
         <Footer/>
       </div>

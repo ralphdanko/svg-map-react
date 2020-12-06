@@ -1,7 +1,10 @@
 .m-simpleNav {
-    justify-content: flex-end;
+    justify-content: center;
     font-weight: 300;
     color: $grey-light;
+    @include tablet {
+        justify-content: flex-end;
+    }
     
     &__item {
         transition: color 0.3s;
@@ -17,6 +20,12 @@
             position: absolute;
             top: 0.4rem;
             right: 0;
+        }
+
+        &:last-child {
+            &::after {
+                content: none;
+            }
         }
 
         &:hover {

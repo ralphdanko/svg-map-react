@@ -1,4 +1,5 @@
 import React from 'react';
+import SimpleMenuLink from './SimpleMenuLink';
 
 class App extends React.Component {
 
@@ -7,17 +8,25 @@ class App extends React.Component {
       <header className="o-header">
         <div className="t-container">
         <div className="t-col-12">
-          <div className="t-col-12-6">A place for something :)</div>
+          <div className="t-col-12-6"></div>
           <div className="t-col-12-6">
             <ul className="m-horizontalNav m-simpleNav">
-              <li className="m-simpleNav__item">
-                <a href="#" className="a-link">Pasje</a></li>
-              <li className="m-simpleNav__item">
-                <a href="#" className="a-link">Biznes</a></li>
-              <li className="m-simpleNav__item">
-                <a href="#" className="a-link">Pomoc</a></li>
-              <li className="m-simpleNav__item">
-                <a href="#" className="a-link">Kontakt</a></li>
+              <SimpleMenuLink
+                link="#"
+                name="Pasje"
+              />
+              <SimpleMenuLink
+                link="#"
+                name="Biznes"
+              />
+              <SimpleMenuLink
+                link="#"
+                name="Pomoc"
+              />
+              <SimpleMenuLink
+                link="#"
+                name="Kontakt"
+              />
             </ul>
           </div>
         </div>
