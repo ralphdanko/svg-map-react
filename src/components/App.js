@@ -14,8 +14,13 @@ class App extends React.Component {
 			selectedLocation: null
 		};
 
-		this.handleOnChange = this.handleOnChange.bind(this);
+    this.handleOnChange = this.handleOnChange.bind(this);
+    this.handleLocationBlur = this.handleLocationBlur.bind(this);
   }
+
+  handleLocationBlur() {
+		this.setState({ selectedLocation: null });
+	}
   
   handleOnChange(selectedNode) {
 		this.setState(prevState => {
@@ -31,11 +36,30 @@ class App extends React.Component {
       <div>
         <Header/>
         <div className="t-container">
-        <RadioSVGMap 
-          map={Poland}
-          onChange={this.handleOnChange}
-        />
-        Selected location ID: {this.state.selectedLocation}
+          <div className="t-col-12 o-mapSection">
+            <div className="t-col-12-7">
+              <RadioSVGMap 
+                map={Poland}
+                onChange={this.handleOnChange}
+                onLocationBlur={this.handleLocationBlur}
+              />
+            </div>
+            <div className="t-col-12-5">
+              Selected location ID: {this.state.selectedLocation}
+              {(() => {
+                switch (this.state.selectedLocation) {
+                  case 'dolnoslaskie':
+                    return 'karuzela dolnoslaska';
+                  case 'slaskie':
+                    return 'karuzela slaska';
+                  case 'opolskie':
+                    return 'karuzela opolska';
+                  default:
+                    return null;
+                }
+              })()}
+            </div>
+          </div>
         </div>
         <Footer/>
       </div>

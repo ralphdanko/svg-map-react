@@ -1,0 +1,15 @@
+.m-columnsNav {
+    font-weight: 300;
+    color: $grey-light;
+    margin-bottom: 1rem;
+
+    &__item {
+        transition: color 0.3s;
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+
+        &:hover {
+            color: $white;
+        }
+    }
+}

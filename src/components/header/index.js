@@ -1,14 +1,13 @@
 import React from 'react';
-import SimpleMenuLink from './SimpleMenuLink';
+import SimpleMenuLink from '../shared/SimpleMenuLink';
 
-class App extends React.Component {
+class Header extends React.Component {
 
   render() {
     return (
       <header className="o-header">
         <div className="t-container">
-        <div className="t-col-12">
-          <div className="t-col-12-6"></div>
+        <div className="t-col-12 m-topNav">
           <div className="t-col-12-6">
             <ul className="m-horizontalNav m-simpleNav">
               <SimpleMenuLink
@@ -30,7 +29,12 @@ class App extends React.Component {
             </ul>
           </div>
         </div>
-          Head
+          <div className="t-col-12">
+            <div className="t-col-12-3">
+              <h1>Logo</h1>
+            </div>
+            <div className="t-col-12-9"></div>
+          </div>
         </div>
       </header>
     );
@@ -38,4 +42,4 @@ class App extends React.Component {
   
 }
 
-export default App;
+export default Header;
