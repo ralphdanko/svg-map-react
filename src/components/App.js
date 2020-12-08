@@ -39,7 +39,7 @@ class App extends React.Component {
                 onChange={this.handleOnChange}
               />
             </div>
-            <div className="t-col-12-4">
+            <div className="t-col-12-4 o-sliderSection">
                {(() => {
                 switch (this.state.selectedLocation) {
                   case 'podkarpackie':

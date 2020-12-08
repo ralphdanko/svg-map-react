@@ -10,15 +10,18 @@ function LocationShops({currentLocation}) {
         images: [
           {
             src: 'pod1.jpg',
-            desc: 'opis 1'
+            loc: 'Rzeszów',
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non volutpat velit. Vestibulum in sollicitudin neque, in scelerisque dui. In a nisl malesuada, porttitor enim nec, consectetur felis. Donec vulputate pretium consequat. Vestibulum fringilla libero vitae mauris vestibulum, nec vestibulum est egestas.'
           },
           {
             src: 'pod2.jpg',
-            desc: 'opis 2'
+            loc: 'Przemyśl',
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non volutpat velit. Vestibulum in sollicitudin neque, in scelerisque dui. In a nisl malesuada, porttitor enim nec, consectetur felis. Donec vulputate pretium consequat. Vestibulum fringilla libero vitae mauris vestibulum, nec vestibulum est egestas.'
           },
           {
             src: 'pod3.jpg',
-            desc: 'opis 3'
+            loc: 'Jarosław',
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non volutpat velit. Vestibulum in sollicitudin neque, in scelerisque dui. In a nisl malesuada, porttitor enim nec, consectetur felis. Donec vulputate pretium consequat. Vestibulum fringilla libero vitae mauris vestibulum, nec vestibulum est egestas.'
           }
         ]
       }
@@ -71,13 +74,18 @@ function LocationShops({currentLocation}) {
   if (imagesList) {
     imagesList.forEach((item,index)=>{
       itemList.push( 
-      <div className="a-imageContainer" key={index}>
-        <img className="a-image" src={`/images/${item.src}`} alt={item.alt}/>
-      </div>)
+        <div key={index}>
+          <div className="a-imageContainer">
+            <img className="a-image" src={`/images/${item.src}`} alt={item.alt}/>
+          </div>
+          <h3>{item.loc}</h3>
+          <p>{item.desc}</p>
+        </div>
+      )
     })
   }
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -86,6 +94,9 @@ function LocationShops({currentLocation}) {
   
   return (
     <div>
+      <h2>{shop && 
+      shop.data.name
+      }</h2>
       <Slider {...settings}>
       {itemList}
       </Slider>
